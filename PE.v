@@ -18,7 +18,7 @@ module PE(
         else if(en) begin
             data_out <= data_in;
             weight_out <= weight_in;
-            sum <= data_in[7]^weight_in[7] ? sum - data_in*weight_in : sum + data_in*weight_in;
+            sum <= data_in[7]^weight_in[7] ? sum - data_in[6:0]*weight_in[6:0] : sum + data_in[6:0]*weight_in[6:0];
         end
     end
 endmodule
